@@ -6,7 +6,9 @@ double mwst = 0.0;
 double skonto = 0.0;
 double rechnungsbetrag = 0.0;
 
-
+/**
+ * Gibt das Menue aus
+ */
 void menuausgabe(){
     printf("\n\n");
     printf("Nettopreis\t\tEuro %10.2f\n", netto);
@@ -19,6 +21,9 @@ void menuausgabe(){
     printf("\n\n");
 }
 
+/**
+ * Gibt dem Nutzer die Moeglichkeit einen Wert einzugeben
+ */
 void eingabe(){
     double value = 0.0;
     while(!scanf("%lf", &value)){
@@ -29,6 +34,9 @@ void eingabe(){
     netto = value;
 }
 
+/**
+ * Berechnet Mehrwertsteuer, Brutto, Skonto und Rechnungsbetrag
+ */
 void preiseBerechnen(){
     mwst = netto * 0.20;
     brutto = netto + mwst;
@@ -36,6 +44,10 @@ void preiseBerechnen(){
     rechnungsbetrag = brutto - skonto;
 }
 
+/**
+ * Main
+ * @return
+ */
 int main() {
     printf("Bitte gib einen Netto Preis ein: ");
 //    scanf("%lf", &netto);
